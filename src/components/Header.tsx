@@ -36,7 +36,7 @@ const Header = () => {
                 <div className="flex w-full justify-end">
                     <div
                         title="Current temperature of my city"
-                        className="bg-neutral-800 px-2 py-[0.65rem] rounded-md cursor-pointer hover:bg-neutral-800/10 transition-all flex items-center gap-2">
+                        className="px-2 py-[0.65rem] rounded-md cursor-pointer hover:bg-neutral-900 transition-all flex items-center gap-2">
                         <Cloud size={'15px'} />
                         <h3 className="text-xs">{temperature} °C</h3>
                     </div>

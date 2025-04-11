@@ -113,6 +113,8 @@ const Spotify = () => {
                 Click me
             </button>
             {isPlaying}
+            {currentTrack}
+            {error}
         </div>
     )
 }

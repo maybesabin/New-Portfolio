@@ -3,7 +3,7 @@ import Header from "./components/Header"
 import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
-import Spotify from "./components/Spotify"
+import Github from "./components/Github"
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Skills />
         <Projects />
         <Contact />
-        <Spotify />
+        <Github />
       </div>
     </div>
   )

@@ -4,6 +4,7 @@ import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import Github from "./components/Github"
+import Wakatime from "./components/Wakatime"
 
 const App = () => {
   return (
@@ -14,7 +15,10 @@ const App = () => {
         <Skills />
         <Projects />
         <Contact />
-        <Github />
+        <div className="w-full flex items-center justify-between">
+          <Wakatime />
+          <Github />
+        </div>
       </div>
     </div>
   )

@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion"
+import { fadeIn } from "@/utils/animation";
 
 const Github = () => {
 
@@ -22,14 +24,16 @@ const Github = () => {
     useEffect(() => { fetchContributions() }, [])
 
     return (
-        <div className="w-full flex justify-end">
-            <a
-                target="_blank"
-                href={url}
-                className="text-xs text-neutral-500 hover:text-neutral-400 cursor-pointer mt-2 transition-all">
-                {error ? error : `${contributions} contributions this year`}
-            </a>
-        </div>
+        <motion.a
+            initial={fadeIn.initial}
+            animate={fadeIn.animate}
+            viewport={fadeIn.viewport}
+            transition={{ ...fadeIn.transition, delay: 0.26 }}
+            target="_blank"
+            href={url}
+            className="text-xs text-neutral-500 hover:text-neutral-400 cursor-pointer mt-2 transition-all">
+            {error ? error : `${contributions} contributions this year`}
+        </motion.a>
     )
 }
 

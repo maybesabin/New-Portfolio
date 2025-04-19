@@ -11,15 +11,14 @@ const About = () => {
                 animate={fadeIn.animate}
                 transition={{ ...fadeIn.transition, delay: 0.12 }}
                 className="md:text-sm text-xs text-neutral-400">
-                a 18 year old full stack developer from Nepal. I thrive in creating pixel perfect websites. I specialize in  <span className="text-white inline-block">Frontend Development.</span> Besides coding, I like boxing, watching paranormal movies and documentaries.
-            </motion.p>
-
-            <motion.p
-                initial={fadeIn.initial}
-                animate={fadeIn.animate}
-                transition={{ ...fadeIn.transition, delay: 0.13 }}
-                className="md:text-sm text-xs text-neutral-400 mt-2">
-                I'm available for internships, full time opportunities and freelance projects.
+                a 19 year old full stack developer from Nepal. I thrive in creating pixel perfect websites. I specialize in
+                <span className="text-white inline-block">
+                    &nbsp;Frontend Development.
+                </span>
+                <span
+                    className="md:text-sm text-xs text-neutral-400">
+                    I'm available for internships, full time opportunities and freelance projects.
+                </span>
             </motion.p>
 
             <a href="mailto:highsabin987@gmail.com" target="_blank">
@@ -27,8 +26,8 @@ const About = () => {
                     initial={fadeIn.initial}
                     animate={fadeIn.animate}
                     transition={{ ...fadeIn.transition, delay: 0.14 }}
-                    className="border-neutral-800 border cursor-pointer hover:bg-neutral-700 transition-all rounded-lg px-2 py-1.5 flex items-center gap-2 -mt-1">
-                    <IconBriefcase size={17} />
+                    className="border-neutral-800 border cursor-pointer hover:bg-neutral-700 transition-all rounded-lg px-2 py-1.5 flex items-center gap-2 mt-2">
+                    <IconBriefcase className="md:size-[17px] size-[12px]" />
                     <h3 className="md:text-sm text-xs">Hire Me</h3>
                 </motion.div>
             </a>

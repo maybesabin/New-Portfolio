@@ -15,7 +15,3 @@
     --radius: 0.5rem;
   }
 }
-
-body {
-  cursor: url("./assets/cursor.png"), auto;
-}

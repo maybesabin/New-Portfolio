@@ -31,7 +31,7 @@ const Wakatime = () => {
             target="_blank"
             href={wakatimeUrl}
             className="text-xs text-neutral-500 hover:text-neutral-400 cursor-pointer mt-2 transition-all">
-            {error ? 'failed to fetch data' : `i coded ${totalTime} today`}
+            {error ? 'failed to fetch data' : totalTime == null ? 'i didn&#39;t code today :(' : `i coded ${totalTime} today`}
         </motion.a>
     )
 }

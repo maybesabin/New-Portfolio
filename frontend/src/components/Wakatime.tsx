@@ -6,7 +6,7 @@ import { fadeIn } from "@/utils/animation";
 const Wakatime = () => {
 
     const wakatimeUrl = 'https://wakatime.com/@sabinhamal_'
-    const [totalTime, setTotalTime] = useState<null | number>(null);
+    const [totalTime, setTotalTime] = useState<null | any>(null);
     const [error, setError] = useState<string | null>(null);
 
     const fetchContributions = async () => {
@@ -31,7 +31,7 @@ const Wakatime = () => {
             target="_blank"
             href={wakatimeUrl}
             className="text-xs text-neutral-500 hover:text-neutral-400 cursor-pointer mt-2 transition-all">
-            {error ? 'failed to fetch data' : totalTime == null ? 'no coding today :(' : `i coded ${totalTime} today`}
+            {error ? 'failed to fetch data' : (totalTime == null || totalTime == '0 secs') ? 'no coding today :(' : `i coded ${totalTime} today`}
         </motion.a>
     )
 }

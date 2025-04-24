@@ -13,12 +13,9 @@ const About = () => {
                 className="md:text-sm text-xs text-neutral-400">
                 a 19 year old full stack developer from Nepal. I thrive in creating pixel perfect websites. I specialize in
                 <span className="text-white inline-block">
-                    &nbsp;Frontend Development.
+                    &nbsp;Frontend Development.&nbsp;
                 </span>
-                <span
-                    className="md:text-sm text-xs text-neutral-400">
-                    I'm available for internships, full time opportunities and freelance projects.
-                </span>
+                I'm available for internships, full time opportunities and freelance projects.
             </motion.p>
 
             <a href="mailto:highsabin987@gmail.com" target="_blank">

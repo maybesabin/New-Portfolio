@@ -1,24 +1,45 @@
 import { motion } from "framer-motion"
 import { fadeIn } from "../utils/animation.ts"
 import { useEffect, useState } from "react"
-import { Cloud } from "lucide-react"
+import { Cloud, Eye } from "lucide-react"
 
 const Header = () => {
     const [temperature, setTemperature] = useState<null | number>(null);
+    const [viewCount, setViewCount] = useState<null | number>(null);
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+
+    const fetchWeather = async () => {
+        try {
+            const response = await fetch(
+                `https://api.openweathermap.org/data/2.5/weather?q=Kathmandu&appid=${import.meta.env.VITE_OPEN_WEATHER_API_KEY}&units=metric`
+            );
+            const data = await response.json();
+            setTemperature(data.main.temp);
+        } catch (error: any) {
+            console.log(`Error:${error.message}`)
+        }
+    }
+    const fetchViewCount = async () => {
+        setLoading(true)
+        try {
+            const response = await fetch(
+                `${import.meta.env.VITE_BACKEND_URI}/api/view-count`
+            );
+            const data = await response.json();
+            setViewCount(data.views)
+            setLoading(false)
+        } catch (error: any) {
+            console.log(`Error:${error.message}`)
+            setError(error.message)
+        } finally {
+            setLoading(false)
+        }
+    }
 
     useEffect(() => {
-        const fetchWeather = async () => {
-            try {
-                const response = await fetch(
-                    `https://api.openweathermap.org/data/2.5/weather?q=Kathmandu&appid=${import.meta.env.VITE_OPEN_WEATHER_API_KEY}&units=metric`
-                );
-                const data = await response.json();
-                setTemperature(data.main.temp);
-            } catch (error: any) {
-                console.log(`Error:${error.message}`)
-            }
-        }
         fetchWeather();
+        fetchViewCount()
     }, [])
 
     return (
@@ -41,9 +62,31 @@ const Header = () => {
 
                 </div>
             }
-            <h1 className="md:text-2xl text-base tracking-tight">
+            <div className="md:text-2xl text-base tracking-tight flex items-center gap-2">
                 i'm <span className="font-semibold">sabin</span>
-            </h1>
+                {
+                    loading ? (
+                        <div className="ml-2 -mt-1">
+                            <l-infinity
+                                size="25"
+                                stroke="2"
+                                stroke-length="0.15"
+                                bg-opacity="0.1"
+                                speed="1.3"
+                                color="white"
+                            ></l-infinity>
+                        </div>
+                    ) : error ? null : (
+                        <div className="cursor-pointer group ml-2 text-xs flex items-center gap-1 text-neutral-500 hover:text-neutral-400">
+                            <div className="group-hover:visible invisible absolute top-2 left-38 text-xs text-neutral-300 border border-neutral-400 rounded-sm p-1.5">
+                                View Count
+                            </div>
+                            <Eye size={'15px'} />
+                            <span>{viewCount}</span>
+                        </div>
+                    )
+                }
+            </div>
         </motion.div>
     )
 }

@@ -14,6 +14,13 @@ const Projects = () => {
             livePreview: "https://sabinui.vercel.app/"
         },
         {
+            title: "Revertex",
+            description: "A modern animated agency landing page",
+            icon: "🔷",
+            sourceCode: "https://github.com/maybesabin/Agency-Landing-Page",
+            livePreview: "https://revertex.vercel.app/"
+        },
+        {
             title: "Organic Karnali",
             description: "An e-commerce site with cart & checkout functionality",
             icon: "🛒",
@@ -26,13 +33,6 @@ const Projects = () => {
             icon: "🌐",
             sourceCode: "https://github.com/maybesabin/SwiftOps",
             livePreview: "https://swiftops.vercel.app/"
-        },
-        {
-            title: "Crypto Landing Page",
-            description: "A crypto app landing page",
-            icon: "💲",
-            sourceCode: "https://github.com/maybesabin/Crypto-Website",
-            livePreview: "https://crypto-website-sabin.vercel.app/"
         },
         {
             title: "Trendora",

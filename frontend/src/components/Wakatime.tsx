@@ -50,7 +50,7 @@ const Wakatime = () => {
                     ></l-infinity>
                     :
                     (totalTime == null || totalTime == `0 secs`) ?
-                        'no coding today :(' :
+                        `i didn't code today` :
                         `i coded ${totalTime} today`
             }
             {(!loading && error) && 'failed to fetch data'}

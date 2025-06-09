@@ -64,7 +64,7 @@ const Header = () => {
             }
             <div className="md:text-2xl text-base tracking-tight flex items-center gap-2">
                 i'm <span className="font-semibold">sabin</span>
-                {
+                {/* {
                     loading ? (
                         <div className="ml-2 -mt-1">
                             <l-infinity
@@ -85,7 +85,7 @@ const Header = () => {
                             <span>{viewCount}</span>
                         </div>
                     )
-                }
+                } */}
             </div>
         </motion.div>
     )

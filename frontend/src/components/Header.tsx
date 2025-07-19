@@ -1,13 +1,10 @@
 import { motion } from "framer-motion"
 import { fadeIn } from "../utils/animation.ts"
 import { useEffect, useState } from "react"
-import { Cloud, Eye } from "lucide-react"
+import { Cloud } from "lucide-react"
 
 const Header = () => {
     const [temperature, setTemperature] = useState<null | number>(null);
-    const [viewCount, setViewCount] = useState<null | number>(null);
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
 
     const fetchWeather = async () => {
         try {
@@ -20,26 +17,8 @@ const Header = () => {
             console.log(`Error:${error.message}`)
         }
     }
-    const fetchViewCount = async () => {
-        setLoading(true)
-        try {
-            const response = await fetch(
-                `${import.meta.env.VITE_BACKEND_URI}/api/view-count`
-            );
-            const data = await response.json();
-            setViewCount(data.views)
-            setLoading(false)
-        } catch (error: any) {
-            console.log(`Error:${error.message}`)
-            setError(error.message)
-        } finally {
-            setLoading(false)
-        }
-    }
-
     useEffect(() => {
         fetchWeather();
-        fetchViewCount()
     }, [])
 
     return (

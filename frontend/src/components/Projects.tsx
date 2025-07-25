@@ -22,10 +22,9 @@ const Projects = () => {
         },
         {
             title: "Organic Karnali",
-            description: "An e-commerce site with cart & checkout functionality",
+            description: "A fullstack e-commerce site with admin dashboard & checkout functionality",
             icon: "🛒",
-            sourceCode: "https://github.com/E-pravidi-Web-Dev/organickarnali_frontend",
-            livePreview: "https://organickarnalifrontend.web.app/"
+            livePreview: "https://karnaliorganics.com/"
         },
         {
             title: "SwiftOps",
@@ -85,12 +84,14 @@ const Projects = () => {
                                 <p className="pl-4 text-neutral-500 text-xs lowercase">{item.description}</p>
                             </div>
                         </div>
-                        <a
-                            href={item.sourceCode}
-                            target="_blank"
-                            className="text-xs text-neutral-500 hover:text-white transition-all">
-                            code
-                        </a>
+                        {item.sourceCode &&
+                            <a
+                                href={item.sourceCode}
+                                target="_blank"
+                                className="text-xs text-neutral-500 hover:text-white transition-all">
+                                code
+                            </a>
+                        }
                     </motion.div>
                 ))}
                 {(showMore ? projects : projects.slice(0, 4)).map((item, idx) => (
@@ -116,12 +117,14 @@ const Projects = () => {
                                 <p className="pl-4 text-neutral-500 text-xs lowercase">{item.description}</p>
                             </div>
                         </div>
-                        <a
-                            href={item.sourceCode}
-                            target="_blank"
-                            className="text-xs text-neutral-500 hover:text-white transition-all">
-                            code
-                        </a>
+                        {item.sourceCode &&
+                            <a
+                                href={item.sourceCode}
+                                target="_blank"
+                                className="text-xs text-neutral-500 hover:text-white transition-all">
+                                code
+                            </a>
+                        }
                     </motion.div>
                 ))}
                 {!showMore ?
